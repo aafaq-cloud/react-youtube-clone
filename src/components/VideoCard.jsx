@@ -25,7 +25,7 @@ const VideoCard = ({
   return (
     <Card
       sx={{
-        width: { md: '320px', xs: '100%' },
+        width: { xs: '100%', md: '320px' },
         boxShadow: 'none',
         borderRadius: 0,
       }}
@@ -35,8 +35,8 @@ const VideoCard = ({
           component="img"
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.channelTitle}
-          sx={{ height: 358 }}
-          // sx={{ width: 358, height: 180, objectFit: 'contain' }}
+          // sx={{ height: 358 }}
+          // sx={{ width: 358, height: 180, objectFit: 'cover' }}
         />
       </Link>
 

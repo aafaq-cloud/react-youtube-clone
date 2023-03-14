@@ -2,11 +2,21 @@ import React from 'react';
 import { Stack, Box } from '@mui/material';
 import { VideoCard, ChannelCard } from './';
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos, direction }) => {
+  if (!videos?.length) return 'Loading...';
+
   console.log('Videos');
   console.log(videos);
+  console.log('Direction:');
+  console.log(direction);
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={2}>
+    <Stack
+      direction={direction || 'row'}
+      flexWrap="wrap"
+      justifyContent="center"
+      alignItems="center"
+      gap={2}
+    >
       {videos.map((item, idx) => (
         <Box key={idx}>
           {/* We want to render a video card
