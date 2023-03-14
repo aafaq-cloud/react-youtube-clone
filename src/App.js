@@ -26,6 +26,7 @@ const App = () => {
           <Route path="/" exact element={<Feed />} />
           <Route path="/video/:id" element={<VideoDetail />} />
           <Route path="/channel/:id" element={<ChannelDetail />} />
+          {/* http://localhost:3005/search/react */}
           <Route path="/search/:searchTerm" element={<SearchFeed />} />
         </Routes>
       </Box>
