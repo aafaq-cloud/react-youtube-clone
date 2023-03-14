@@ -4,16 +4,16 @@ import { Stack } from '@mui/material';
 // import Categories from utils folder and it's an array of object
 // Each object contains a name and icon i.e
 //   { name: 'New', icon: <HomeIcon /> }
-import { categories } from './utils/constants';
+import { categories } from '../utils/constants';
 
 //
-const selectedCategory = 'New';
+// const selectedCategory = 'New';
 
 // Instant return
 // const Sidebar = () => {
 //   return <div>Sidebar</div>;
 // };
-const Sidebar = () => (
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
     direction="row"
     sx={{
@@ -29,10 +29,12 @@ const Sidebar = () => (
       <button
         key={category.name}
         className="category-btn"
+        // Add dynamic styles based on category name
         style={{
           background: category.name === selectedCategory && '#fc1503',
           color: '#fff',
         }}
+        onClick={() => setSelectedCategory(category.name)}
       >
         <span
           style={{
